@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Service للمدرسين | تواصل معنا</title>
+    
+    <!-- Google Fonts: Cairo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Custom Config for Tailwind Colors -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Cairo', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            yellow: '#FFD700',
+                            green: '#00C853',
+                            blue: '#29B6F6',
+                            dark: '#1a1a1a',
+                            light: '#f9fafb'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            overflow-x: hidden;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        /* تنسيق الخريطة */
+        .map-container {
+            position: relative;
+            overflow: hidden;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+        }
+        .map-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navigation (same as other pages) -->
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md shadow-sm transition-all duration-300" id="navbar">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-brand-green flex items-center gap-2">
+                <i class="fa-solid fa-chalkboard-user text-brand-blue"></i>
+                <span>Digital<span class="text-brand-yellow">Service</span></span>
+            </a>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center gap-8 font-semibold">
+                <a href="index.html" class="hover:text-brand-blue transition">الرئيسية</a>
+                <a href="service.html" class="hover:text-brand-blue transition">الخدمات</a>
+                <a href="about.html" class="hover:text-brand-blue transition">من نحن</a>
+                <a href="how-it.html" class="hover:text-brand-blue transition">إزاي نشتغل</a>
+                <a href="contact.html" class="text-brand-blue font-bold border-b-2 border-brand-blue">تواصل معنا</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-2xl text-gray-700" onclick="toggleMenu()">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t p-4 flex flex-col gap-4 shadow-lg">
+            <a href="index.html" class="block hover:text-brand-blue">الرئيسية</a>
+            <a href="service.html" class="block hover:text-brand-blue">الخدمات</a>
+            <a href="about.html" class="block hover:text-brand-blue">من نحن</a>
+            <a href="how-it.html" class="block hover:text-brand-blue">إزاي نشتغل</a>
+            <a href="contact.html" class="block text-brand-blue font-bold">تواصل معنا</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-36 pb-20 bg-gradient-to-br from-brand-light to-white">
+        <div class="container mx-auto px-6 text-center">
+            <div class="inline-block px-4 py-1 bg-brand-blue/10 backdrop-blur-sm border border-brand-blue rounded-full mb-6" data-aos="fade-down">
+                <span class="text-brand-blue font-bold text-sm tracking-wider">📞 اتصل بينا</span>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-black mb-6 text-gray-800" data-aos="fade-up">تواصل معنا</h1>
+            <p class="text-lg md:text-xl text-gray-500 max-w-2xl mx-auto font-light" data-aos="fade-up" data-aos-delay="100">
+                احنا هنا عشان نساعدك. أي استفسار أو استشارة، تواصل معنا بأي وسيلة تناسبك.
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact Info Cards -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- واتساب -->
+                <div class="bg-white p-6 rounded-2xl shadow-lg border border-gray-100 text-center hover:shadow-xl transition" data-aos="zoom-in" data-aos-delay="50">
+                    <div class="w-14 h-14 bg-green-100 text-brand-green rounded-full flex items-center justify-center text-2xl mx-auto mb-3">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-1">واتساب</h3>
+                    <p class="text-gray-400 text-sm">رد سريع</p>
+                    <a href="https://wa.me/20123456789" class="text-brand-green font-semibold mt-2 inline-block hover:underline">+20 123 456 789</a>
+                </div>
+                <!-- البريد الإلكتروني -->
+                <div class="bg-white p-6 rounded-2xl shadow-lg border border-gray-100 text-center hover:shadow-xl transition" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="w-14 h-14 bg-blue-100 text-brand-blue rounded-full flex items-center justify-center text-2xl mx-auto mb-3">
+                        <i class="fa-regular fa-envelope"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-1">البريد الإلكتروني</h3>
+                    <p class="text-gray-400 text-sm">للاستفسارات والمقترحات</p>
+                    <a href="mailto:info@digitalservice.com" class="text-brand-blue font-semibold mt-2 inline-block hover:underline">info@digitalservice.com</a>
+                </div>
+                <!-- مكالمة هاتفية -->
+                <div class="bg-white p-6 rounded-2xl shadow-lg border border-gray-100 text-center hover:shadow-xl transition" data-aos="zoom-in" data-aos-delay="150">
+                    <div class="w-14 h-14 bg-yellow-100 text-brand-yellow rounded-full flex items-center justify-center text-2xl mx-auto mb-3">
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-1">اتصال هاتفي</h3>
+                    <p class="text-gray-400 text-sm">من 9 صباحاً لـ 9 مساءً</p>
+                    <a href="tel:+20123456789" class="text-brand-yellow font-semibold mt-2 inline-block hover:underline">+20 123 456 789</a>
+                </div>
+                <!-- العنوان (مقر الشركة) -->
+                <div class="bg-white p-6 rounded-2xl shadow-lg border border-gray-100 text-center hover:shadow-xl transition" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="w-14 h-14 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center text-2xl mx-auto mb-3">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <h3 class="font-bold text-lg mb-1">المقر الرئيسي</h3>
+                    <p class="text-gray-400 text-sm">القاهرة، مصر</p>
+                    <p class="text-purple-600 font-semibold mt-2">٦ أكتوبر - الحي المتميز</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form + Map -->
+    <section class="py-20 bg-brand-light">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- النموذج -->
+                <div class="bg-white p-8 rounded-3xl shadow-xl" data-aos="fade-left">
+                    <h2 class="text-2xl font-bold mb-6">أرسل لنا رسالة</h2>
+                    <form action="#" method="POST">
+                        <div class="mb-4">
+                            <label class="block text-gray-700 font-semibold mb-2">الاسم الكامل</label>
+                            <input type="text" placeholder="مثلاً: أحمد محمد" class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:border-brand-blue transition">
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-gray-700 font-semibold mb-2">البريد الإلكتروني</label>
+                            <input type="email" placeholder="example@domain.com" class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:border-brand-blue transition">
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-gray-700 font-semibold mb-2">رقم الهاتف (اختياري)</label>
+                            <input type="tel" placeholder="+20 123 456 789" class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:border-brand-blue transition">
+                        </div>
+                        <div class="mb-4">
+                            <label class="block text-gray-700 font-semibold mb-2">الرسالة</label>
+                            <textarea rows="5" placeholder="اكتب رسالتك هنا ..." class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:border-brand-blue transition"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-brand-blue text-white py-3 rounded-xl font-bold text-lg hover:bg-blue-600 transition shadow-lg shadow-brand-blue/30">
+                            إرسال الرسالة <i class="fa-regular fa-paper-plane mr-2"></i>
+                        </button>
+                    </form>
+                </div>
+                <!-- الخريطة + معلومات إضافية -->
+                <div data-aos="fade-right">
+                    <div class="bg-white p-6 rounded-3xl shadow-xl mb-6">
+                        <h2 class="text-2xl font-bold mb-4">موقعنا</h2>
+                        <div class="map-container rounded-2xl overflow-hidden">
+                            <!-- خريطة Google Maps (مثال) -->
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3456.789012345678!2d31.234567!3d30.123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzDCsDA3JzI0LjQiTiAzMcKwMTQnMDAuMCJF!5e0!3m2!1sar!2seg!4v1612345678901!5m2!1sar!2seg" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-3xl shadow-xl">
+                        <h2 class="text-xl font-bold mb-3">معلومات الاتصال</h2>
+                        <ul class="space-y-3 text-gray-600">
+                            <li><i class="fa-regular fa-clock ml-2 text-brand-blue"></i> الأحد - الخميس: ٩ صباحاً - ٩ مساءً</li>
+                            <li><i class="fa-regular fa-clock ml-2 text-brand-blue"></i> الجمعة: ٢ ظهراً - ٨ مساءً</li>
+                            <li><i class="fa-regular fa-calendar ml-2 text-brand-blue"></i> السبت: إجازة</li>
+                        </ul>
+                        <div class="mt-4 flex gap-4">
+                            <a href="#" class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-brand-blue hover:bg-brand-blue hover:text-white transition"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#" class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-brand-blue hover:bg-brand-blue hover:text-white transition"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#" class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-brand-blue hover:bg-brand-blue hover:text-white transition"><i class="fa-brands fa-tiktok"></i></a>
+                            <a href="#" class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-brand-blue hover:bg-brand-blue hover:text-white transition"><i class="fa-brands fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Banner (optional) -->
+    <section class="py-16 bg-gradient-to-r from-brand-blue to-brand-green text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4" data-aos="zoom-in">عاوز تبدأ فوراً؟</h2>
+            <p class="text-lg opacity-90 mb-6" data-aos="zoom-in" data-aos-delay="100">كلمنا دلوقتي على الواتساب و أحد الفريق هيرد عليك فوراً</p>
+            <a href="https://wa.me/20123456789" class="inline-block px-8 py-3 bg-white text-brand-blue font-bold rounded-full text-lg hover:bg-gray-100 transition shadow-xl" data-aos="zoom-in" data-aos-delay="200">
+                <i class="fa-brands fa-whatsapp ml-2"></i> تواصل واتساب
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer (same as other pages) -->
+    <footer id="contact" class="bg-brand-dark text-white py-16">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+                <!-- Column 1: About -->
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">Digital<span class="text-brand-yellow">Service</span></h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-4">
+                        للمدرسين بتقدملك كل الحلول الرقمية عشان تبني براند شخصي فيرال وتوصل لكل الطلاب.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-brand-blue transition"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-brand-blue transition"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-brand-blue transition"><i class="fa-brands fa-tiktok"></i></a>
+                        <a href="#" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-brand-blue transition"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div>
+                    <h4 class="text-lg font-bold mb-4 border-b-2 border-brand-blue inline-block pb-1">روابط سريعة</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="index.html" class="hover:text-brand-blue transition">الرئيسية</a></li>
+                        <li><a href="service.html" class="hover:text-brand-blue transition">خدماتنا</a></li>
+                        <li><a href="about.html" class="hover:text-brand-blue transition">من نحن</a></li>
+                        <li><a href="how-it.html" class="hover:text-brand-blue transition">إزاي نشتغل</a></li>
+                        <li><a href="contact.html" class="hover:text-brand-blue transition">تواصل معنا</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Contact Info -->
+                <div>
+                    <h4 class="text-lg font-bold mb-4 border-b-2 border-brand-blue inline-block pb-1">تواصل معنا</h4>
+                    <ul class="space-y-3 text-gray-300">
+                        <li><i class="fa-brands fa-whatsapp ml-2 text-brand-green"></i> +20 123 456 789</li>
+                        <li><i class="fa-regular fa-envelope ml-2 text-brand-yellow"></i> info@digitalservice.com</li>
+                        <li><i class="fa-brands fa-instagram ml-2 text-brand-blue"></i> @digitalservice_eg</li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Newsletter -->
+                <div>
+                    <h4 class="text-lg font-bold mb-4 border-b-2 border-brand-blue inline-block pb-1">ابقى على تواصل</h4>
+                    <p class="text-gray-400 text-sm mb-3">اشترك في النشرة البريدية عشان يوصلك كل جديد.</p>
+                    <form class="flex flex-col gap-2">
+                        <input type="email" placeholder="بريدك الإلكتروني" class="px-4 py-2 rounded-full bg-gray-800 text-white border border-gray-600 focus:outline-none focus:border-brand-blue">
+                        <button class="px-4 py-2 bg-brand-blue rounded-full hover:bg-blue-600 transition">اشترك</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="border-t border-gray-700 mt-12 pt-8 text-center text-gray-400 text-sm">
+                © 2026 Digital Service للمدرسين. كل الحقوق محفوظة.
+            </div>
+        </div>
+    </footer>
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- JavaScript -->
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Service للمدرسين | من نحن</title>
+    
+    <!-- Google Fonts: Cairo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Custom Config for Tailwind Colors -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Cairo', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            yellow: '#FFD700',
+                            green: '#00C853',
+                            blue: '#29B6F6',
+                            dark: '#1a1a1a',
+                            light: '#f9fafb'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            overflow-x: hidden;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Navigation (same as other pages) -->
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md shadow-sm transition-all duration-300" id="navbar">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-brand-green flex items-center gap-2">
+                <i class="fa-solid fa-chalkboard-user text-brand-blue"></i>
+                <span>Digital<span class="text-brand-yellow">Service</span></span>
+            </a>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center gap-8 font-semibold">
+                <a href="index.html" class="hover:text-brand-blue transition">الرئيسية</a>
+                <a href="service.html" class="hover:text-brand-blue transition">الخدمات</a>
+                <a href="about.html" class="text-brand-blue font-bold border-b-2 border-brand-blue">من نحن</a>
+                <a href="how-it.html" class="hover:text-brand-blue transition">إزاي نشتغل؟</a>
+                <a href="contact.html" class="px-6 py-2 bg-brand-blue text-white rounded-full hover:bg-blue-600 transition shadow-lg hover:shadow-blue-500/30">
+                    تواصل معنا
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-2xl text-gray-700" onclick="toggleMenu()">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t p-4 flex flex-col gap-4 shadow-lg">
+            <a href="index.html" class="block hover:text-brand-blue">الرئيسية</a>
+            <a href="services.html" class="block hover:text-brand-blue">الخدمات</a>
+            <a href="about.html" class="block text-brand-blue font-bold">من نحن</a>
+            <a href="how-it.html" class="block hover:text-brand-blue">إزاي نشتغل؟</a>
+            <a href="contact.html" class="block text-brand-blue font-bold">تواصل معنا</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-36 pb-20 bg-gradient-to-br from-brand-light to-white">
+        <div class="container mx-auto px-6 text-center">
+            <div class="inline-block px-4 py-1 bg-brand-green/10 backdrop-blur-sm border border-brand-green rounded-full mb-6" data-aos="fade-down">
+                <span class="text-brand-green font-bold text-sm tracking-wider">✨ حكايتنا معاك</span>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-black mb-6 text-gray-800" data-aos="fade-up">من نحن</h1>
+            <p class="text-lg md:text-xl text-gray-500 max-w-2xl mx-auto font-light" data-aos="fade-up" data-aos-delay="100">
+                فريق متكامل من الخبراء في التسويق الرقمي وصناعة المحتوى التعليمي، هدفنا نساعدك تبني برندك وتوصل لكل الطلاب.
+            </p>
+        </div>
+    </section>
+
+    <!-- Our Story -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2" data-aos="fade-left">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071&auto=format&fit=crop" alt="Team meeting" class="rounded-3xl shadow-2xl">
+                </div>
+                <div class="md:w-1/2" data-aos="fade-right">
+                    <span class="text-brand-blue font-bold text-sm tracking-wider">قصتنا</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">من مبادرة بسيطة لشركة رقمية رائدة</h2>
+                    <p class="text-gray-500 mb-4 leading-relaxed">
+                        بدأنا رحلتنا سنة 2020، لما لاحظنا إن في مدرسين كتير أوي عندهم خبرة وشغف لكن مش قادرين يوصلوا للعدد اللي يستحقوه بسبب ضعف الظهور على السوشيال ميديا. قررنا نجمع فريق من المصورين والمونتيرين والمسوقين عشان نساعد المدرس إنه يقدم محتواه بأفضل صورة.
+                    </p>
+                    <p class="text-gray-500 mb-6 leading-relaxed">
+                        النهاردة بنفخر إنا ساعدنا أكتر من 500 مدرس في مصر والوطن العربي يوصلوا لمئات الآلاف من الطلاب، ونكون جزء من رحلتهم التعليمية.
+                    </p>
+                    <div class="flex gap-4">
+                        <div class="text-center">
+                            <h3 class="text-3xl font-bold text-brand-blue">+500</h3>
+                            <span class="text-gray-400">مدرس تعاملوا معانا</span>
+                        </div>
+                        <div class="text-center">
+                            <h3 class="text-3xl font-bold text-brand-green">+10M</h3>
+                            <span class="text-gray-400">مشاهدة حققناها</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Values -->
+    <section class="py-20 bg-brand-light">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="text-brand-blue font-bold text-sm tracking-wider">القيم اللي بنشتغل بيها</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">ليه المدرسين بيثقوا فينا</h2>
+                <div class="w-20 h-1 bg-brand-blue mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-3xl shadow-lg text-center" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="w-16 h-16 bg-blue-100 text-brand-blue rounded-full flex items-center justify-center text-3xl mx-auto mb-4">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">شغف حقيقي</h3>
+                    <p class="text-gray-500">بنحب التعليم وبنشتغل بشغف عشان نوصله لأكبر عدد من الطلاب.</p>
+                </div>
+                <div class="bg-white p-8 rounded-3xl shadow-lg text-center" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="w-16 h-16 bg-green-100 text-brand-green rounded-full flex items-center justify-center text-3xl mx-auto mb-4">
+                        <i class="fa-solid fa-handshake"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">شفافية</h3>
+                    <p class="text-gray-500">نشارك معاك كل خطوة وتقدر تتابع النتائج بنفسك.</p>
+                </div>
+                <div class="bg-white p-8 rounded-3xl shadow-lg text-center" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="w-16 h-16 bg-yellow-100 text-brand-yellow rounded-full flex items-center justify-center text-3xl mx-auto mb-4">
+                        <i class="fa-solid fa-rocket"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">تطوير مستمر</h3>
+                    <p class="text-gray-500">دايمًا بنطور من خدماتنا عشان نواكب الترندات ونقدم الأفضل.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section (اختياري) -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="text-brand-blue font-bold text-sm tracking-wider">فريق الشغف</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">ناس شغوفة بتساعدك تنجح</h2>
+                <div class="w-20 h-1 bg-brand-blue mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1974&auto=format&fit=crop" alt="CEO" class="w-40 h-40 rounded-full mx-auto mb-4 object-cover border-4 border-brand-blue">
+                    <h3 class="text-xl font-bold">أحمد منصور</h3>
+                    <p class="text-brand-blue">المؤسس والمدير التنفيذي</p>
+                    <p class="text-gray-400 text-sm mt-2">خبرة ١٠ سنين في التسويق الرقمي والتعليم</p>
+                </div>
+                <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=1974&auto=format&fit=crop" alt="CMO" class="w-40 h-40 rounded-full mx-auto mb-4 object-cover border-4 border-brand-green">
+                    <h3 class="text-xl font-bold">د. سارة علي</h3>
+                    <p class="text-brand-green">مديرة المحتوى التعليمي</p>
+                    <p class="text-gray-400 text-sm mt-2">دكتوراه في المناهج وطرق التدريس</p>
+                </div>
+                <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+                    <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=1974&auto=format&fit=crop" alt="Creative Director" class="w-40 h-40 rounded-full mx-auto mb-4 object-cover border-4 border-brand-yellow">
+                    <h3 class="text-xl font-bold">كريم عبدالله</h3>
+                    <p class="text-brand-yellow">المدير الإبداعي</p>
+                    <p class="text-gray-400 text-sm mt-2">مخرج ومونتير محترف حائز على جوائز</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-20 bg-gradient-to-r from-brand-blue to-brand-green text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6" data-aos="zoom-in">عايز تكون جزء من قصتنا؟</h2>
+            <p class="text-xl opacity-90 mb-8 max-w-2xl mx-auto" data-aos="zoom-in" data-aos-delay="100">احجز استشارة مجانية دلوقتي وخلي أول فيديو ليك يبقى فيرال!</p>
+            <a href="index.html#contact" class="inline-block px-10 py-4 bg-white text-brand-blue font-bold rounded-full text-lg hover:bg-gray-100 transition shadow-xl" data-aos="zoom-in" data-aos-delay="200">
+                <i class="fa-regular fa-calendar-check ml-2"></i> احجز استشارة مجانية
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer (same as other pages) -->
+    <footer id="contact" class="bg-brand-dark text-white py-16">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+                <!-- Column 1: About -->
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">Digital<span class="text-brand-yellow">Service</span></h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-4">
+                        للمدرسين بتقدملك كل الحلول الرقمية عشان تبني براند شخصي فيرال وتوصل لكل الطلاب.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-brand-blue transition"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-brand-blue transition"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-brand-blue transition"><i class="fa-brands fa-tiktok"></i></a>
+                        <a href="#" class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-brand-blue transition"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div>
+                    <h4 class="text-lg font-bold mb-4 border-b-2 border-brand-blue inline-block pb-1">روابط سريعة</h4>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="index.html" class="hover:text-brand-blue transition">الرئيسية</a></li>
+                        <li><a href="service.html" class="hover:text-brand-blue transition">خدماتنا</a></li>
+                        <li><a href="about.html" class="hover:text-brand-blue transition">من نحن</a></li>
+                        <li><a href="contact.html" class="hover:text-brand-blue transition">تواصل معنا</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Contact Info -->
+                <div>
+                    <h4 class="text-lg font-bold mb-4 border-b-2 border-brand-blue inline-block pb-1">تواصل معنا</h4>
+                    <ul class="space-y-3 text-gray-300">
+                        <li><i class="fa-brands fa-whatsapp ml-2 text-brand-green"></i> +20 123 456 789</li>
+                        <li><i class="fa-regular fa-envelope ml-2 text-brand-yellow"></i> info@digitalservice.com</li>
+                        <li><i class="fa-brands fa-instagram ml-2 text-brand-blue"></i> @digitalservice_eg</li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Newsletter -->
+                <div>
+                    <h4 class="text-lg font-bold mb-4 border-b-2 border-brand-blue inline-block pb-1">ابقى على تواصل</h4>
+                    <p class="text-gray-400 text-sm mb-3">اشترك في النشرة البريدية عشان يوصلك كل جديد.</p>
+                    <form class="flex flex-col gap-2">
+                        <input type="email" placeholder="بريدك الإلكتروني" class="px-4 py-2 rounded-full bg-gray-800 text-white border border-gray-600 focus:outline-none focus:border-brand-blue">
+                        <button class="px-4 py-2 bg-brand-blue rounded-full hover:bg-blue-600 transition">اشترك</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="border-t border-gray-700 mt-12 pt-8 text-center text-gray-400 text-sm">
+                © 2026 Digital Service للمدرسين. كل الحقوق محفوظة.
+            </div>
+        </div>
+    </footer>
+
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- JavaScript -->
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
